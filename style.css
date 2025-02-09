@@ -1,0 +1,130 @@
+body {
+    font-family: "Times New Roman", serif;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+.todo-input {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background: #eee;
+    margin: 5px 0;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    position: relative;
+}
+
+.task-content {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.task-content input[type="checkbox"] {
+    position: absolute;
+    left: 10px;
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
+.task-text {
+    flex: 1;
+    margin-left: 40px;
+    font-size: 16px;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.delete {
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.delete:hover {
+    background: darkred;
+}
+
+/* Tooltip styling */
+.tooltip {
+    visibility: hidden;
+    position: absolute;
+    background-color: #555;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    z-index: 1;
+}
+
+.task-content input[type="checkbox"]:hover + .task-text .tooltip {
+    visibility: visible;
+}
+
+.task-content input[type="checkbox"]:hover + .task-text {
+    position: relative;
+}
+
+/* Tooltip for delete button */
+.delete:hover::after {
+    content: "Delete";
+    position: absolute;
+    top: -20px;
+    right: 0;
+    background: #555;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+}
